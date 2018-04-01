@@ -26,5 +26,6 @@ namespace RecruitmentSystem
         }
     
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Nationality> Nationalities { get; set; }
     }
 }

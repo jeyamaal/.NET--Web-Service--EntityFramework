@@ -12,9 +12,11 @@ namespace RecruitmentSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class Role
+    public partial class Nationality
     {
-        public string id { get; set; }
-        public string role_name { get; set; }
+        public int ID { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Remarks { get; set; }
     }
 }

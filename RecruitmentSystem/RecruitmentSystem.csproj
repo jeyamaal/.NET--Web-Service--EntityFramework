@@ -136,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs" />
+    <Compile Include="Nationality.cs">
+      <DependentUpon>RecruitmentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitmentModel.Context.cs">
       <AutoGen>True</AutoGen>
