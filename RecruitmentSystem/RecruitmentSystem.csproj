@@ -60,6 +60,10 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -111,6 +115,7 @@
       <DependentUpon>RecruitmentModel.edmx</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\RecruitmentWebService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,12 +134,15 @@
       <DependentUpon>RecruitmentModel.edmx</DependentUpon>
       <LastGenOutput>RecruitmentModel.cs</LastGenOutput>
     </Content>
-    <Content Include="RecuruitmentService.asmx" />
+    <Content Include="RecruitmentService.asmx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>RecruitmentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs" />
     <Compile Include="Nationality.cs">
       <DependentUpon>RecruitmentModel.tt</DependentUpon>
@@ -155,8 +163,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecruitmentModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="RecuruitmentService.asmx.cs">
-      <DependentUpon>RecuruitmentService.asmx</DependentUpon>
+    <Compile Include="RecruitmentService.asmx.cs">
+      <DependentUpon>RecruitmentService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Role.cs">

@@ -25,7 +25,8 @@ namespace RecruitmentSystem
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Nationality> Nationalities { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }

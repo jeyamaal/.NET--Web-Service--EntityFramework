@@ -17,6 +17,7 @@ C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\R
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Microsoft.Web.Helpers.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Newtonsoft.Json.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Helpers.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Mvc.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Razor.dll
@@ -28,6 +29,7 @@ C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\R
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.WebPages.Deployment.dll
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\EntityFramework.xml
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\Newtonsoft.Json.xml
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Helpers.xml
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Mvc.xml
 C:\Users\jselventhiran\documents\visual studio 2015\Projects\RecruitmentSystem\RecruitmentSystem\bin\System.Web.Razor.xml

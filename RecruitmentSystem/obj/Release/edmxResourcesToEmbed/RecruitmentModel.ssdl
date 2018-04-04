@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitmentSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="additionalDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="relative_status" Type="varchar" MaxLength="10" />
+    <Property Name="relative_name" Type="varchar" MaxLength="100" />
+    <Property Name="relative_type" Type="varchar" MaxLength="40" />
+    <Property Name="beforeJob_status" Type="varchar" MaxLength="10" />
+    <Property Name="beforeJob_role" Type="varchar" MaxLength="50" />
+    <Property Name="beforeJob_appliedDate" Type="date" />
+    <Property Name="outSideResidence_status" Type="varchar" MaxLength="10" />
+    <Property Name="country" Type="varchar" MaxLength="150" />
+    <Property Name="from_outside" Type="date" />
+    <Property Name="to_outside" Type="date" />
+    <Property Name="arrestStatus" Type="varchar" MaxLength="10" />
+    <Property Name="arrest_Reason" Type="varchar(max)" />
+    <Property Name="finedStatus" Type="varchar" MaxLength="10" />
+    <Property Name="fined_Reason" Type="varchar(max)" />
+    <Property Name="disabilityStatus" Type="varchar" MaxLength="10" />
+    <Property Name="disability_Reason" Type="varchar(max)" />
+    <Property Name="socialVolunteerStatus" Type="varchar" MaxLength="10" />
+    <Property Name="socialVolunteer_Reason" Type="varchar(max)" />
+    <Property Name="availableDatetoStart" Type="date" />
+    <Property Name="outsidework_status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ALResults">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subjectName" Type="varchar" MaxLength="150" />
+    <Property Name="results" Type="varchar" MaxLength="10" />
+    <Property Name="dateAchieved" Type="date" />
+  </EntityType>
+  <EntityType Name="award">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="awardName" Type="varchar" MaxLength="150" />
+    <Property Name="dateReceived" Type="date" />
+  </EntityType>
+  <EntityType Name="ComputerLiteracy">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="toolsName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumberType" Type="nvarchar" MaxLength="10" />
+    <Property Name="Number" Type="varchar" MaxLength="10" />
+    <Property Name="Initials" Type="nvarchar" MaxLength="10" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OtherNames" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="2" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address3" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address4" Type="nvarchar" MaxLength="100" />
+    <Property Name="TempAddress1" Type="nvarchar" MaxLength="100" />
+    <Property Name="TempAddress2" Type="nvarchar" MaxLength="100" />
+    <Property Name="TempAddress3" Type="nvarchar" MaxLength="100" />
+    <Property Name="TempAddress4" Type="nvarchar" MaxLength="100" />
+    <Property Name="Telephone1" Type="nvarchar" MaxLength="75" />
+    <Property Name="Telephone2" Type="nvarchar" MaxLength="75" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="NationalID" Type="nvarchar" MaxLength="20" />
+    <Property Name="PassportNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateofBirth" Type="date" />
+    <Property Name="NationalityID" Type="int" />
+    <Property Name="MaritalStatusID" Type="int" />
+    <Property Name="ReligionID" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeExamination">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExaminationID" Type="int" Nullable="false" />
+    <Property Name="ExaminationDate" Type="datetime" />
+    <Property Name="ExaminationStagesID" Type="int" Nullable="false" />
+    <Property Name="EmployeeStateID" Type="smallint" />
+  </EntityType>
+  <EntityType Name="EmployeeFamilyDetails">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="150" />
+    <Property Name="Relationship" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalContact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkPlace" Type="nvarchar" MaxLength="50" />
+    <Property Name="OfficialContact" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Examination">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExaminationCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="smallint" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+    <Property Name="LeaveEntitled" Type="bit" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="CreateTime" Type="time" Precision="7" />
+    <Property Name="ChangedUser" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedDate" Type="date" />
+    <Property Name="ChangedTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="ExaminationStages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descriptions" Type="nvarchar" MaxLength="150" />
+    <Property Name="ExaminationID" Type="int" Nullable="false" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="CreateTime" Type="time" Precision="7" />
+    <Property Name="ChangedUser" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedDate" Type="date" />
+    <Property Name="ChangedTime" Type="time" Precision="7" />
+    <Property Name="Status" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RecruitmentSystem.dbo.ExaminationStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ExaminationStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="ExaminationsUpdate">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExaminationID" Type="int" Nullable="false" />
+    <Property Name="ExaminationDate" Type="datetime" />
+    <Property Name="ExaminationStagesID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MaritalStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="memershipDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="membershipName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OLResults">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subjectName" Type="varchar" MaxLength="150" />
+    <Property Name="results" Type="varchar" MaxLength="10" />
+    <Property Name="dateAchieved" Type="date" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="CreateTime" Type="time" Precision="7" />
+    <Property Name="ChangedUser" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedDate" Type="date" />
+    <Property Name="ChangedTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="QualificationArea">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="CreateTime" Type="time" Precision="7" />
+    <Property Name="ChangedUser" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedDate" Type="date" />
+    <Property Name="ChangedTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="QualificationsUpdate">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QualificationID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="InstitutionID" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="150" />
+    <Property Name="QualificationAreaID" Type="int" />
+    <Property Name="QualifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RecruitmentSystem.dbo.Religion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ReligionID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ReligionID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="role_name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="schoolDetails">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="schoolName" Type="varchar" MaxLength="150" />
+    <Property Name="schoolLocation" Type="varchar" MaxLength="150" />
+    <Property Name="schoolFrom" Type="date" />
+    <Property Name="schoolTo" Type="date" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TrainingDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="trainingStatus" Type="varchar" MaxLength="10" />
+    <Property Name="trainingFrom" Type="date" />
+    <Property Name="trainingTo" Type="date" />
+  </EntityType>
+  <EntityContainer Name="RecruitmentSystemModelStoreContainer">
+    <EntitySet Name="additionalDetail" EntityType="Self.additionalDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ALResults" EntityType="Self.ALResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="award" EntityType="Self.award" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ComputerLiteracy" EntityType="Self.ComputerLiteracy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeExamination" EntityType="Self.EmployeeExamination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeFamilyDetails" EntityType="Self.EmployeeFamilyDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Examination" EntityType="Self.Examination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExaminationStages" EntityType="Self.ExaminationStages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExaminationsUpdate" EntityType="Self.ExaminationsUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaritalStatus" EntityType="Self.MaritalStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="memershipDetail" EntityType="Self.memershipDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nationality" EntityType="Self.Nationality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OLResults" EntityType="Self.OLResults" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualification" EntityType="Self.Qualification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualificationArea" EntityType="Self.QualificationArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QualificationsUpdate" EntityType="Self.QualificationsUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="schoolDetails" EntityType="Self.schoolDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainingDetail" EntityType="Self.TrainingDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExaminationStatus" EntityType="Self.ExaminationStatus" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ExaminationStatus].[ID] AS [ID], 
+[ExaminationStatus].[Code] AS [Code], 
+[ExaminationStatus].[Description] AS [Description], 
+[ExaminationStatus].[Active] AS [Active]
+FROM [dbo].[ExaminationStatus] AS [ExaminationStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Religion" EntityType="Self.Religion" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Religion].[ID] AS [ID], 
+[Religion].[ReligionID] AS [ReligionID], 
+[Religion].[Name] AS [Name], 
+[Religion].[Description] AS [Description]
+FROM [dbo].[Religion] AS [Religion]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

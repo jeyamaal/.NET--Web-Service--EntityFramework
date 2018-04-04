@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecruitmentSystemModelStoreContainer" CdmEntityContainer="RecruitmentSystemEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationalities">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Nationality">
+        <MappingFragment StoreEntitySet="Nationality">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeExaminations">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.EmployeeExamination">
+        <MappingFragment StoreEntitySet="EmployeeExamination">
+          <ScalarProperty Name="EmployeeStateID" ColumnName="EmployeeStateID" />
+          <ScalarProperty Name="ExaminationStagesID" ColumnName="ExaminationStagesID" />
+          <ScalarProperty Name="ExaminationDate" ColumnName="ExaminationDate" />
+          <ScalarProperty Name="ExaminationID" ColumnName="ExaminationID" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Examinations">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Examination">
+        <MappingFragment StoreEntitySet="Examination">
+          <ScalarProperty Name="ChangedTime" ColumnName="ChangedTime" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+          <ScalarProperty Name="ChangedUser" ColumnName="ChangedUser" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="LeaveEntitled" ColumnName="LeaveEntitled" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ExaminationCode" ColumnName="ExaminationCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExaminationStages">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.ExaminationStage">
+        <MappingFragment StoreEntitySet="ExaminationStages">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ChangedTime" ColumnName="ChangedTime" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+          <ScalarProperty Name="ChangedUser" ColumnName="ChangedUser" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ExaminationID" ColumnName="ExaminationID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExaminationsUpdates">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.ExaminationsUpdate">
+        <MappingFragment StoreEntitySet="ExaminationsUpdate">
+          <ScalarProperty Name="ExaminationStagesID" ColumnName="ExaminationStagesID" />
+          <ScalarProperty Name="ExaminationDate" ColumnName="ExaminationDate" />
+          <ScalarProperty Name="ExaminationID" ColumnName="ExaminationID" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+          <ScalarProperty Name="jobRefID" ColumnName="jobRefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaritalStatus">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.MaritalStatu">
+        <MappingFragment StoreEntitySet="MaritalStatus">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Skill">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memershipDetails">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.memershipDetail">
+        <MappingFragment StoreEntitySet="memershipDetail">
+          <ScalarProperty Name="membershipName" ColumnName="membershipName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OLResults">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.OLResult">
+        <MappingFragment StoreEntitySet="OLResults">
+          <ScalarProperty Name="dateAchieved" ColumnName="dateAchieved" />
+          <ScalarProperty Name="results" ColumnName="results" />
+          <ScalarProperty Name="subjectName" ColumnName="subjectName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualifications">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Qualification">
+        <MappingFragment StoreEntitySet="Qualification">
+          <ScalarProperty Name="ChangedTime" ColumnName="ChangedTime" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+          <ScalarProperty Name="ChangedUser" ColumnName="ChangedUser" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualificationAreas">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.QualificationArea">
+        <MappingFragment StoreEntitySet="QualificationArea">
+          <ScalarProperty Name="ChangedTime" ColumnName="ChangedTime" />
+          <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
+          <ScalarProperty Name="ChangedUser" ColumnName="ChangedUser" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QualificationsUpdates">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.QualificationsUpdate">
+        <MappingFragment StoreEntitySet="QualificationsUpdate">
+          <ScalarProperty Name="QualifiedDate" ColumnName="QualifiedDate" />
+          <ScalarProperty Name="QualificationAreaID" ColumnName="QualificationAreaID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="InstitutionID" ColumnName="InstitutionID" />
+          <ScalarProperty Name="QualificationID" ColumnName="QualificationID" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+          <ScalarProperty Name="jobRefID" ColumnName="jobRefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="schoolDetails">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.schoolDetail">
+        <MappingFragment StoreEntitySet="schoolDetails">
+          <ScalarProperty Name="schoolTo" ColumnName="schoolTo" />
+          <ScalarProperty Name="schoolFrom" ColumnName="schoolFrom" />
+          <ScalarProperty Name="schoolLocation" ColumnName="schoolLocation" />
+          <ScalarProperty Name="schoolName" ColumnName="schoolName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainingDetails">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.TrainingDetail">
+        <MappingFragment StoreEntitySet="TrainingDetail">
+          <ScalarProperty Name="trainingTo" ColumnName="trainingTo" />
+          <ScalarProperty Name="trainingFrom" ColumnName="trainingFrom" />
+          <ScalarProperty Name="trainingStatus" ColumnName="trainingStatus" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="additionalDetails">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.additionalDetail">
+        <MappingFragment StoreEntitySet="additionalDetail">
+          <ScalarProperty Name="outsidework_status" ColumnName="outsidework_status" />
+          <ScalarProperty Name="availableDatetoStart" ColumnName="availableDatetoStart" />
+          <ScalarProperty Name="socialVolunteer_Reason" ColumnName="socialVolunteer_Reason" />
+          <ScalarProperty Name="socialVolunteerStatus" ColumnName="socialVolunteerStatus" />
+          <ScalarProperty Name="disability_Reason" ColumnName="disability_Reason" />
+          <ScalarProperty Name="disabilityStatus" ColumnName="disabilityStatus" />
+          <ScalarProperty Name="fined_Reason" ColumnName="fined_Reason" />
+          <ScalarProperty Name="finedStatus" ColumnName="finedStatus" />
+          <ScalarProperty Name="arrest_Reason" ColumnName="arrest_Reason" />
+          <ScalarProperty Name="arrestStatus" ColumnName="arrestStatus" />
+          <ScalarProperty Name="to_outside" ColumnName="to_outside" />
+          <ScalarProperty Name="from_outside" ColumnName="from_outside" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="outSideResidence_status" ColumnName="outSideResidence_status" />
+          <ScalarProperty Name="beforeJob_appliedDate" ColumnName="beforeJob_appliedDate" />
+          <ScalarProperty Name="beforeJob_role" ColumnName="beforeJob_role" />
+          <ScalarProperty Name="beforeJob_status" ColumnName="beforeJob_status" />
+          <ScalarProperty Name="relative_type" ColumnName="relative_type" />
+          <ScalarProperty Name="relative_name" ColumnName="relative_name" />
+          <ScalarProperty Name="relative_status" ColumnName="relative_status" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALResults">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.ALResult">
+        <MappingFragment StoreEntitySet="ALResults">
+          <ScalarProperty Name="dateAchieved" ColumnName="dateAchieved" />
+          <ScalarProperty Name="results" ColumnName="results" />
+          <ScalarProperty Name="subjectName" ColumnName="subjectName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awards">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.award">
+        <MappingFragment StoreEntitySet="award">
+          <ScalarProperty Name="dateReceived" ColumnName="dateReceived" />
+          <ScalarProperty Name="awardName" ColumnName="awardName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComputerLiteracies">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.ComputerLiteracy">
+        <MappingFragment StoreEntitySet="ComputerLiteracy">
+          <ScalarProperty Name="toolsName" ColumnName="toolsName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          <ScalarProperty Name="MaritalStatusID" ColumnName="MaritalStatusID" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="TempAddress4" ColumnName="TempAddress4" />
+          <ScalarProperty Name="TempAddress3" ColumnName="TempAddress3" />
+          <ScalarProperty Name="TempAddress2" ColumnName="TempAddress2" />
+          <ScalarProperty Name="TempAddress1" ColumnName="TempAddress1" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="NumberType" ColumnName="NumberType" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+          <ScalarProperty Name="jobRefID" ColumnName="jobRefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeFamilyDetails">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.EmployeeFamilyDetail">
+        <MappingFragment StoreEntitySet="EmployeeFamilyDetails">
+          <ScalarProperty Name="OfficialContact" ColumnName="OfficialContact" />
+          <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="PersonalContact" ColumnName="PersonalContact" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="canID" ColumnName="canID" />
+          <ScalarProperty Name="jobRefID" ColumnName="jobRefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExaminationStatus">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.ExaminationStatu">
+        <MappingFragment StoreEntitySet="ExaminationStatus">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Religion">
+        <MappingFragment StoreEntitySet="Religion">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ReligionID" ColumnName="ReligionID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

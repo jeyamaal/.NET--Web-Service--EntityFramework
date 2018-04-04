@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitmentSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RecruitmentSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Roles" EntityType="RecruitmentSystemModel.Role" />
+    <EntitySet Name="Nationalities" EntityType="RecruitmentSystemModel.Nationality" />
+    <EntitySet Name="EmployeeExaminations" EntityType="RecruitmentSystemModel.EmployeeExamination" />
+    <EntitySet Name="Examinations" EntityType="RecruitmentSystemModel.Examination" />
+    <EntitySet Name="ExaminationStages" EntityType="RecruitmentSystemModel.ExaminationStage" />
+    <EntitySet Name="ExaminationsUpdates" EntityType="RecruitmentSystemModel.ExaminationsUpdate" />
+    <EntitySet Name="MaritalStatus" EntityType="RecruitmentSystemModel.MaritalStatu" />
+    <EntitySet Name="Skills" EntityType="RecruitmentSystemModel.Skill" />
+    <EntitySet Name="memershipDetails" EntityType="RecruitmentSystemModel.memershipDetail" />
+    <EntitySet Name="OLResults" EntityType="RecruitmentSystemModel.OLResult" />
+    <EntitySet Name="Qualifications" EntityType="RecruitmentSystemModel.Qualification" />
+    <EntitySet Name="QualificationAreas" EntityType="RecruitmentSystemModel.QualificationArea" />
+    <EntitySet Name="QualificationsUpdates" EntityType="RecruitmentSystemModel.QualificationsUpdate" />
+    <EntitySet Name="schoolDetails" EntityType="RecruitmentSystemModel.schoolDetail" />
+    <EntitySet Name="TrainingDetails" EntityType="RecruitmentSystemModel.TrainingDetail" />
+    <EntitySet Name="additionalDetails" EntityType="RecruitmentSystemModel.additionalDetail" />
+    <EntitySet Name="ALResults" EntityType="RecruitmentSystemModel.ALResult" />
+    <EntitySet Name="awards" EntityType="RecruitmentSystemModel.award" />
+    <EntitySet Name="ComputerLiteracies" EntityType="RecruitmentSystemModel.ComputerLiteracy" />
+    <EntitySet Name="Employees" EntityType="RecruitmentSystemModel.Employee" />
+    <EntitySet Name="EmployeeFamilyDetails" EntityType="RecruitmentSystemModel.EmployeeFamilyDetail" />
+    <EntitySet Name="ExaminationStatus" EntityType="RecruitmentSystemModel.ExaminationStatu" />
+    <EntitySet Name="Religions" EntityType="RecruitmentSystemModel.Religion" />
+  </EntityContainer>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeExamination">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExaminationID" Type="Int32" Nullable="false" />
+    <Property Name="ExaminationDate" Type="DateTime" Precision="3" />
+    <Property Name="ExaminationStagesID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeStateID" Type="Int16" />
+  </EntityType>
+  <EntityType Name="Examination">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExaminationCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Int16" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="LeaveEntitled" Type="Boolean" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateTime" Type="Time" Precision="7" />
+    <Property Name="ChangedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangedTime" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="ExaminationStage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descriptions" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ExaminationID" Type="Int32" Nullable="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateTime" Type="Time" Precision="7" />
+    <Property Name="ChangedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangedTime" Type="Time" Precision="7" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExaminationsUpdate">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExaminationID" Type="Int32" Nullable="false" />
+    <Property Name="ExaminationDate" Type="DateTime" Precision="3" />
+    <Property Name="ExaminationStagesID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MaritalStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="memershipDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="membershipName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OLResult">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="subjectName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="results" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dateAchieved" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Qualification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateTime" Type="Time" Precision="7" />
+    <Property Name="ChangedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangedTime" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="QualificationArea">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateTime" Type="Time" Precision="7" />
+    <Property Name="ChangedUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="0" />
+    <Property Name="ChangedTime" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="QualificationsUpdate">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QualificationID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionID" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="QualificationAreaID" Type="Int32" />
+    <Property Name="QualifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="schoolDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="schoolName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="schoolLocation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="schoolFrom" Type="DateTime" Precision="0" />
+    <Property Name="schoolTo" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TrainingDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trainingStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="trainingFrom" Type="DateTime" Precision="0" />
+    <Property Name="trainingTo" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="additionalDetail">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="relative_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="relative_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="relative_type" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="beforeJob_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="beforeJob_role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="beforeJob_appliedDate" Type="DateTime" Precision="0" />
+    <Property Name="outSideResidence_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="from_outside" Type="DateTime" Precision="0" />
+    <Property Name="to_outside" Type="DateTime" Precision="0" />
+    <Property Name="arrestStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="arrest_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="finedStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fined_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="disabilityStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="disability_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="socialVolunteerStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="socialVolunteer_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="availableDatetoStart" Type="DateTime" Precision="0" />
+    <Property Name="outsidework_status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ALResult">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="subjectName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="results" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dateAchieved" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="award">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="awardName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="dateReceived" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComputerLiteracy">
+    <Key>
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="toolsName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NumberType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Initials" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OtherNames" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TempAddress1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TempAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TempAddress3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TempAddress4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone1" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone2" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="NationalID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PassportNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="NationalityID" Type="Int32" />
+    <Property Name="MaritalStatusID" Type="Int32" />
+    <Property Name="ReligionID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EmployeeFamilyDetail">
+    <Key>
+      <PropertyRef Name="jobRefID" />
+      <PropertyRef Name="canID" />
+    </Key>
+    <Property Name="jobRefID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="canID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MemberName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficialContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExaminationStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ReligionID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ReligionID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

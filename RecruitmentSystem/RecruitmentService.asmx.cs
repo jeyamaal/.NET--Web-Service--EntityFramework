@@ -8,13 +8,15 @@ using System.Web.Mvc;
 using System.Web.Helpers;
 using System.Web.Script.Services;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace RecruitmentSystem
 {
     /// <summary>
     /// Summary description for RecuruitmentService
     /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
+    [WebService(Namespace = "http://kpmgSL-recruitment.com/")]
+    // http://tempuri.org/ default namespace
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -22,6 +24,8 @@ namespace RecruitmentSystem
     public class RecuruitmentService : System.Web.Services.WebService
     {
         RecruitmentSystemEntities em = new RecruitmentSystemEntities();
+
+        JavaScriptSerializer js = new JavaScriptSerializer();
 
 
         [WebMethod]
@@ -37,8 +41,7 @@ namespace RecruitmentSystem
             var json = "";
             var roles = from a in em.Roles select a.role_name;
             string ss = roles.ToString();
-            JavaScriptSerializer jss = new JavaScriptSerializer();
-            json = jss.Serialize(roles);
+            json = js.Serialize(roles);
             return json;
         }
 
@@ -46,7 +49,6 @@ namespace RecruitmentSystem
         [WebMethod]
         public List<Role> LoadRoles()
         {
-
             var myRoles = new List<Role>();
             myRoles = (from a in em.Roles select a).ToList();
             return myRoles;
@@ -101,7 +103,6 @@ namespace RecruitmentSystem
         {
             var myRoles = new List<Role>();
             myRoles = (from a in em.Roles select a).ToList();
-            JavaScriptSerializer js = new JavaScriptSerializer();
             Context.Response.Write(js.Serialize(myRoles));
         }
 
@@ -110,57 +111,33 @@ namespace RecruitmentSystem
         [WebMethod]
         public void getNationality()
         {
-            var nationals = new List<Nationality>();
-            nationals = (from a in em.Nationalities select a).ToList();
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            Context.Response.Write(js.Serialize(nationals));
+            try
+            {
+                var nationals = new List<Nationality>();
+                nationals = (from a in em.Nationalities select a).ToList();
+                Context.Response.Write(js.Serialize(nationals));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace.ToString());
+            }
         }
 
-        //[WebMethod]
-        //public void addRole(string id, string name)
-        //{
-        //    Role r = new Role();
-
-        //    r.id = id;
-        //    r.role_name = name;
-
-        //    em.Roles.Add(r);
-
-        //    int res = em.SaveChanges();
-
-        //    if (res > 0)
-        //    {
-        //        Debug.WriteLine("Insert Successfully");
-        //    }
-
-        //    else
-        //    {
-        //        Debug.WriteLine("Insert Failure");
-        //    }
-        //}
-
-
-        // Working
-        //[WebMethod]
-        ////[ScriptMethod(UseHttpGet = true)]
-        //public  int  addRoleTest(int  i)
-        //{
-
-
-        //    if (i==3)
-        //    {
-        //        Debug.WriteLine("Post method Success");
-        //        return 5;
-        //    }
-
-        //    else
-        //    {
-        //        Debug.WriteLine("Post mehod Failure");
-        //    }
-
-        //    return 8;
-
-        //}
+        // Getting Nationality 
+        [WebMethod]
+        public void getNationalityAsSelectedValues()
+        {
+            try
+            {
+               
+                var nationals = (from a in em.Nationalities select new {a.Name,a.Remarks}).ToList();
+                Context.Response.Write(js.Serialize(nationals));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace.ToString());
+            }
+        }
 
         [WebMethod]
         //[ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
@@ -173,19 +150,69 @@ namespace RecruitmentSystem
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Context.Response.Clear();
                 Context.Response.ContentType = "application/json";
-             
-             
                 Context.Response.Write(js.Serialize(k));
                 Debug.WriteLine("Post method Success");
-               
             }
 
             else
             {
-                Debug.WriteLine("Post mehod Failure");
+                Debug.WriteLine("Post method Failure");
             }
 
-         
+         }
+        /**
+           This method pass the name as string and address as Address array
+        */
+
+        [WebMethod]
+        public void addAddress(string name, string address)
+        {
+            int res=-9;
+
+            try {
+                Address [] addr= JsonConvert.DeserializeObject<Address[]>(address);
+                Address addre = new Address();
+                foreach (var dd in addr)
+                {
+                    Debug.WriteLine( "Street Name is"+dd.streetName);
+
+                    addre.name = name;
+                    addre.streetName = dd.streetName;
+                    addre.area = dd.area;
+                    em.Addresses.Add(addre);
+                    res = em.SaveChanges();
+                }
+                // if sucessful insertion 
+                if (res > 0)
+                {
+                    int k = 2;
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    Context.Response.Clear();
+                    Context.Response.ContentType = "application/json";
+                    Context.Response.Write(js.Serialize(k));
+                    Debug.WriteLine("Address Data Sucessfully Inserted");
+                }
+                else
+                {
+                    Debug.WriteLine("Address Data Not Inserted");
+                }
+
+                /**
+                  if Not in array format "[{"x":"y","l":"m"}]"
+                */
+                //var dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(address);
+                //foreach (var kv in dict)
+                //{
+
+                //    Debug.WriteLine("Key Value Pair is" + kv.Key + ":" + kv.Value);
+
+                //    Debug.WriteLine("Value is" + kv.Value);
+                //}
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
 
         }
 

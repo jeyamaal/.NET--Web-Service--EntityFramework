@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RecruitmentSystemModelStoreContainer" CdmEntityContainer="RecruitmentSystemEntities">
-    <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="RecruitmentSystemModel.Role">
-        <MappingFragment StoreEntitySet="Role">
-          <ScalarProperty Name="role_name" ColumnName="role_name" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Nationalities">
       <EntityTypeMapping TypeName="RecruitmentSystemModel.Nationality">
         <MappingFragment StoreEntitySet="Nationality">
@@ -16,6 +8,24 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="streetName" ColumnName="streetName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="RecruitmentSystemModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
